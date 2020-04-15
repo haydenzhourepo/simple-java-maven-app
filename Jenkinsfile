@@ -11,6 +11,11 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package -settings /root/.m2/settings.xml'
             }
         }
+        stage('Deliver'){
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+            }
+        }
     }
     
 }
